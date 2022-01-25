@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-COMPATIBLE"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="True" name="HandheldFriendly"/>
+    <meta content="320" name="MobileOptimized"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <title>the-spot.net | tsn8: "Through the Looking Glass"</title>
+    <meta content="https://the-spot.net" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <meta content="tsn: the social network" property="og:title"/>
+    <meta content="Welcome to the social network &quot;the-spot.net&quot;!"
+          property="og:description"/>
+    <meta content="https://the-spot.net/img/og/image.png" property="og:image"/>
+    <link href="//img/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="//img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="//img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="//img/icons/site.webmanifest" rel="manifest">
+    <meta content="#da532c" name="msapplication-TileColor">
+    <meta content="#ffffff" name="theme-color">
+    <style>
+        body {
+            background-color: #003366;
+            background-size: cover;
+            font-family: Calibri, Candara, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-flow: column-reverse nowrap;
+            align-content: center;
+            align-items: center;
+            width: 100vw;
+        }
+
+        nav {
+            position: relative;
+            display: flex;
+            margin: 50px auto 0;
+            width: 50vw;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* Logo Platform & Modifiers */
+        .logo-platform {
+            border-radius: 50%;
+            border: 5px solid transparent;
+
+            align-items: center;
+            display: flex;
+            height: 300px;
+            justify-content: center;
+            margin: 10px;
+            position: relative;
+            width: 300px;
+
+            overflow: hidden;
+            z-index: 1;
+
+            transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        .logo-platform:hover {
+            border-color: #00234F;
+            width: 320px;
+            height: 320px;
+            margin: 0;
+            transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        /* Logo Image & Modifiers */
+        .logo-image {
+            width: 90%;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        /* Links & Modifiers */
+        .link {
+            background-color: transparent;
+            border-radius: 10px;
+
+            font-size: 1.25rem;
+            line-height: 1.5em;
+            text-align: center;
+            text-decoration: none;
+
+            display: inline-block;
+            margin: 20px 10px;
+            overflow: hidden;
+            padding: 12px 24px;
+            position: relative;
+            width: 75px;
+            z-index: 1;
+
+            transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        .logo-platform:before,
+        .link:before {
+            content: "";
+            position: absolute;
+            transform: translateX(-50%) scaleY(1) scaleX(1.25);
+            left: 50%;
+            top: 100%;
+            width: 140%;
+            height: 180%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+
+
+        }
+
+        .logo-platform:after,
+        .link:after {
+            content: "";
+            position: absolute;
+            left: 55%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.45);
+            top: 180%;
+            width: 160%;
+            height: 190%;
+
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        .logo-platform:hover:before,
+        .link:hover:before {
+            top: -35%;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+            transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        .logo-platform:hover:after,
+        .link:hover:after {
+            top: -45%;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+            transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        /* Body White Modifiers */
+        body.white {
+            background: linear-gradient(217deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0) 70.71%),
+            linear-gradient(127deg, rgba(240, 240, 240, 0.8), rgba(0, 0, 0, 0) 70.71%),
+            linear-gradient(336deg, rgba(215, 227, 246, 0.8), rgba(0, 0, 0, 0) 70.71%) no-repeat;
+        }
+
+        /* Body Medium Modifiers - Logo Platform */
+        body.white .logo-platform {
+            background-color: transparent;
+            box-shadow: 30px 30px 60px #cccccc, -30px -30px 60px #ffffff;
+        }
+
+        body.white .logo-platform:hover {
+            box-shadow: 32px 32px 63px #cccccc, -32px -32px 63px #ffffff;
+        }
+
+        /* Body Medium Modifiers - Links */
+        body.white .link {
+            color: #587EAA;
+            box-shadow: 8px 8px 16px #cccccc, -8px -8px 16px #ffffff;
+        }
+
+        body.white .link:after {
+            background-color: #d7e3f6;
+        }
+
+        body.white .link:hover:before {
+            background-color: #d7e3f6;
+        }
+
+        body.white .link:hover:after {
+            background-color: #d7e3f6;
+        }
+
+        /* Body Medium Modifiers */
+        body.medium {
+            background-color: #587EAA;
+        }
+
+        /* Body Medium Modifiers - Logo Platform */
+        body.medium .logo-platform {
+            background: linear-gradient(145deg, #4f7199, #5e87b6) no-repeat -5px -5px;
+            background-size: 100% calc(100% + 10px);
+            box-shadow: 30px 30px 60px #4b6b91, -30px -30px 60px #6591c4;
+        }
+
+        body.medium .logo-platform:hover {
+            background: linear-gradient(145deg, #4f7199, #5e87b6) no-repeat -5px -5px;
+            background-size: 100% calc(100% + 10px);
+            box-shadow: 32px 32px 63px #4b6b91, -32px -32px 63px #6591c4;
+        }
+
+        body.medium .logo-platform:after {
+            background-color: #ffffff;
+        }
+
+        body.medium .logo-platform:hover:before {
+            background-color: #d7e3f6;
+        }
+
+        body.medium .logo-platform:hover:after {
+            background-color: #ffffff;
+        }
+
+        /* Body Medium Modifiers - Links */
+        body.medium .link {
+            color: #d7e3f6;
+            box-shadow: 8px 8px 16px #4b6b91, -8px -8px 16px #6591c4;
+        }
+
+        body.medium .link:after {
+            background-color: #003366;
+        }
+
+        body.medium .link:hover:before {
+            background-color: #1D4D86;
+        }
+
+        body.medium .link:hover:after {
+            background-color: #003366;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav {
+                width: 100vw;
+            }
+        }
+
+    </style>
+</head>
+<body class="medium">
+<main>
+    <nav class="links-container">
+        <a class="link" href="/tsn">tsnBlog</a>
+        <a class="link" href="https://guild.the-spot.net">guild</a>
+        <a class="link" href="/phorums/myspot.php">forums</a>
+        <a class="link" href="https://thepizzy.net">tech</a>
+        <a class="link" href="/phorums/tsn" rel="nofollow">tsn9</a>
+    </nav>
+    <a class="logo-platform" href="/tsn">
+        <img alt="tsn9 Full Color Logo" class="logo-image" src="./img/logos/tsn9-full-color.png">
+    </a>
+</main>
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments);
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-238317-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
