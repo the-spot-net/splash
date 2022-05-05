@@ -1,0 +1,41 @@
+RewriteEngine on
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+#<ifModule mod_php4.c>
+#	php_value register_globals 1
+#</ifModule>
+
+<Limit GET POST>
+#The next line modified by DenyIP
+order allow,deny
+#The next line modified by DenyIP
+#deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+#AuthName www.the-spot.net
+#AuthUserFile /home/neo/public_html/_vti_pvt/service.pwd
+#AuthGroupFile /home/neo/public_html/_vti_pvt/service.grp
+#<ifModule mod_php4.c>
+#	php_value auto_prepend_file /home/neo/public_html/global_prepend.php
+#	php_value auto_append_file /localfilepath/global_append.php
+#</ifModule>
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+# Use PHP5 as default
+
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteRule ^.*\.(yml|lock|phar|md)$ - [R=404,NC,L] # Prevent access to config and executables
+RewriteRule ^\..*$ - [R=404,NC,L] # Prevent access to anything starting with a .
+RewriteRule ^[\w\d\-.]*\.php$ - [R=404,NC,L] # Prevent top-level php requests
+
+#AddHandler application/x-httpd-php55  .php55 .php
