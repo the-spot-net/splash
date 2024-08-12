@@ -38,8 +38,21 @@
     <meta content="#da532c" name="msapplication-TileColor"/>
     <meta content="#ffffff" name="theme-color"/>
     <style>
+        :root {
+            --color1: #003366;
+            --color2: #1d4d86;
+            --color3: #587eaa;
+            --color4: #d7e3f6;
+            --color5: #f5a623;
+            --color6: #fbd249;
+        }
+
+        html {
+            width: 100vw;
+            height: 100vh;
+        }
+
         body {
-            background-color: #003366;
             background-size: cover;
             font-family: Calibri, Candara, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -47,6 +60,18 @@
             overflow-x: hidden;
             width: 100vw;
             height: 100vh;
+            background: var(--color1);
+            /* Preferred fancy background */
+            background-image: radial-gradient(at 99% 21%, var(--color1) 0, transparent 43%),
+            radial-gradient(at 36% 67%, var(--color3) 0, transparent 64%),
+            radial-gradient(at 59% 5%, var(--color2) 0, transparent 42%),
+            radial-gradient(at 54% 82%, var(--color3) 0, transparent 46%),
+            radial-gradient(at 15% 28%, var(--color2) 0, transparent 57%),
+            radial-gradient(at 85% 73%, var(--color3) 0, transparent 50%),
+            radial-gradient(at 66% 71%, var(--color4) 0, transparent 27%),
+            radial-gradient(at 43% 46%, var(--color4) 0, transparent 50%);
+            background-attachment: fixed;
+
         }
 
         main {
@@ -120,7 +145,7 @@
             overflow: hidden;
             padding: 12px 24px;
             position: relative;
-            width: 75px;
+            width: 95px;
             z-index: 1;
 
             transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -172,63 +197,16 @@
             transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
 
-        /* Body White Modifiers */
-        body.white {
-            background: linear-gradient(
-                    217deg,
-                    rgba(255, 255, 255, 0.8),
-                    rgba(0, 0, 0, 0) 70.71%
-            ),
-            linear-gradient(
-                    127deg,
-                    rgba(240, 240, 240, 0.8),
-                    rgba(0, 0, 0, 0) 70.71%
-            ),
-            linear-gradient(
-                    336deg,
-                    rgba(215, 227, 246, 0.8),
-                    rgba(0, 0, 0, 0) 70.71%
-            ) no-repeat;
-        }
-
-        /* Body Medium Modifiers - Logo Platform */
-        body.white .logo-platform {
-            background-color: transparent;
-            box-shadow: 30px 30px 60px #cccccc, -30px -30px 60px #ffffff;
-        }
-
-        body.white .logo-platform:hover {
-            box-shadow: 32px 32px 63px #cccccc, -32px -32px 63px #ffffff;
-        }
-
-        /* Body Medium Modifiers - Links */
-        body.white .link {
-            color: #587eaa;
-            box-shadow: 8px 8px 16px #cccccc, -8px -8px 16px #ffffff;
-        }
-
-        body.white .link:after {
-            background-color: #d7e3f6;
-        }
-
-        body.white .link:hover:before {
-            background-color: #d7e3f6;
-        }
-
-        body.white .link:hover:after {
-            background-color: #d7e3f6;
-        }
-
         /* Body Medium Modifiers */
-        body.medium {
-            background-color: #587eaa;
-        }
+        /*body.medium {*/
+        /*    background-color: var(--color3);*/
+        /*}*/
 
         /* Body Medium Modifiers - Logo Platform */
         body.medium .logo-platform {
-            background: linear-gradient(145deg, #4f7199, #5e87b6) no-repeat -5px -5px;
+            /*background: linear-gradient(145deg, #4f7199, #5e87b6) no-repeat -5px -5px;*/
             background-size: 100% calc(100% + 10px);
-            box-shadow: 30px 30px 60px #4b6b91, -30px -30px 60px #6591c4;
+            /*box-shadow: 30px 30px 60px #4b6b91, -30px -30px 60px #6591c4;*/
         }
 
         body.medium .logo-platform:hover {
@@ -242,7 +220,7 @@
         }
 
         body.medium .logo-platform:hover:before {
-            background-color: #d7e3f6;
+            background-color: var(--color4);
         }
 
         body.medium .logo-platform:hover:after {
@@ -251,20 +229,21 @@
 
         /* Body Medium Modifiers - Links */
         body.medium .link {
-            color: #d7e3f6;
+            color: var(--color4);
+            /*box-shadow: 8px 8px 16px #4b6b91, -8px -8px 16px #6591c4;*/
             box-shadow: 8px 8px 16px #4b6b91, -8px -8px 16px #6591c4;
         }
 
         body.medium .link:after {
-            background-color: #003366;
+            background-color: var(--color1);
         }
 
         body.medium .link:hover:before {
-            background-color: #1d4d86;
+            background-color: var(--color2); /* #1d4d86; */
         }
 
         body.medium .link:hover:after {
-            background-color: #003366;
+            background-color: var(--color1);
         }
 
         @media only screen and (max-width: 600px) {
@@ -278,43 +257,30 @@
 <main>
     <nav class="links-container">
         <a class="link" href="/tsn">tsnBlog</a>
-        <a class="link" href="https://guild.the-spot.net">guild</a>
-        <a class="link" href="https://social.the-spot.net">social</a>
-        <a class="link" href="https://thepizzy.net">tech</a>
+        <a class="link" href="https://tsn.cafe">tsnCafe</a>
+        <!-- <a class="link" rel="nofollow" href="https://discord.the-spot.net">tsnDiscord</a>-->
+        <a class="link" href="https://guild.the-spot.net">tsnGuild</a>
+        <!-- <a class="link" href="https://social.the-spot.net">tsnSocial</a>-->
+        <a class="link" href="https://thepizzy.net">tsnTech</a>
         <!-- <a class="link" href="/phorums/tsn" rel="nofollow">tsn9</a> -->
     </nav>
     <a class="logo-platform" href="/phorums/">
-        <img
-                alt="tsn9 Full Color Logo"
-                class="logo-image"
-                src="./img/logos/tsn9-full-color.png"
-        />
+        <img alt="tsn9 Full Color Logo" class="logo-image" src="./img/logos/tsn9-full-color.png"/>
     </a>
 </main>
 
 <script>
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
-    (i[r] =
-      i[r] ||
-      function () {
-        (i[r].q = i[r].q || []).push(arguments);
-      }),
-      (i[r].l = 1 * new Date());
-    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m);
-  })(
-    window,
-    document,
-    'script',
-    '//www.google-analytics.com/analytics.js',
-    'ga'
-  );
+    (i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }), (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+    a.async = 1
+    a.src = g
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga')
 
-  ga('create', 'UA-238317-1', 'auto');
-  ga('send', 'pageview');
+  ga('create', 'UA-238317-1', 'auto')
+  ga('send', 'pageview')
 </script>
 </body>
 </html>
